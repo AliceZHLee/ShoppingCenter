@@ -20,7 +20,8 @@ namespace ShoppingCenter.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
         public ApplicationDbContext()
             : base("IdentityDbEntitiesString", throwIfV1Schema: false)
         {

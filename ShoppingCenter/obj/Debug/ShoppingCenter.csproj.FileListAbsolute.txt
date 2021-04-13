@@ -98,9 +98,13 @@ C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\Microsoft.Owi
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csprojAssemblyReference.cache
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csproj.CopyComplete
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.dll
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.pdb
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.InitialModel.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csproj.GenerateResource.cache
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.createMembershipType.resources
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.UpdateCustomerClassForNavigateProperity.resources
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.PopulateMembershipType.resources
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.updateColumnProperty.resources
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csprojAssemblyReference.cache

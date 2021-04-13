@@ -8,14 +8,13 @@ namespace ShoppingCenter.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Products",
+                "dbo.Customers",
                 c => new
                     {
-                        ProductId = c.Int(nullable: false, identity: true),
-                        ProductName = c.String(),
-                        Stock = c.Int(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
                     })
-                .PrimaryKey(t => t.ProductId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -104,7 +103,7 @@ namespace ShoppingCenter.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.Products");
+            DropTable("dbo.Customers");
         }
     }
 }
