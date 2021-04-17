@@ -24,6 +24,7 @@ namespace ShoppingCenter
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-flaty.css",
+                    //  "~/Content/font-awesome.css",
                       "~/Content/site.css"));
         }
     }
