@@ -13,8 +13,12 @@ namespace ShoppingCenter.Models
         [StringLength(255)]
         public string Name { get; set; }
         
+        [Display(Name="Date of Birth")]
+        public DateTime? DOB { get; set; }
+        
         public bool IsSubscribedToNewsLetter { get; set; }
         public MembershipType MembershipType { get; set; }//navigation properity to navigate one object from customer to membership type
+        [Display(Name="Membership Type")]
         public int MembershipTypeId { get; set; }
     }
 }

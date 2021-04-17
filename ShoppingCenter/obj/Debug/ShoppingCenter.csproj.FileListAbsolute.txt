@@ -108,3 +108,6 @@ C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\Shoppin
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.PopulateMembershipType.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.updateColumnProperty.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csprojAssemblyReference.cache
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.AddColumnToMembershipType.resources
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.PopulateMemberTypeName.resources
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.AddColumnToCustomer_DOB.resources

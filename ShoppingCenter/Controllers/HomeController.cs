@@ -21,10 +21,28 @@ namespace ShoppingCenter.Controllers
         }
         public ActionResult Index()
         {
-            var homePageViewModel = new HomePageViewModel();
-            homePageViewModel.Customers=_context.Customers.ToList();
-            return View(homePageViewModel);
+            return View();
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult FAQ()
+        {
+            return View();
+        }
+        public ActionResult Shop()
+        {
+            return View();
+        }
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+
 
         public ActionResult Detail(int Id)
         {

@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,9 +196,23 @@
     <Compile Include="Migrations\202104130930055_updateColumnProperty.Designer.cs">
       <DependentUpon>202104130930055_updateColumnProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104131106022_AddColumnToMembershipType.cs" />
+    <Compile Include="Migrations\202104131106022_AddColumnToMembershipType.Designer.cs">
+      <DependentUpon>202104131106022_AddColumnToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104131106445_PopulateMemberTypeName.cs" />
+    <Compile Include="Migrations\202104131106445_PopulateMemberTypeName.Designer.cs">
+      <DependentUpon>202104131106445_PopulateMemberTypeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104140311503_AddColumnToCustomer_DOB.cs" />
+    <Compile Include="Migrations\202104140311503_AddColumnToCustomer_DOB.Designer.cs">
+      <DependentUpon>202104140311503_AddColumnToCustomer_DOB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CreateCustomerViewModel.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\EditCustomerViewModel.cs" />
     <Compile Include="Models\HomePageViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -217,6 +232,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Home Page Image.png" />
+    <Content Include="Images\Home Page Image2.png" />
+    <Content Include="Images\Pure Juice logo2.png" />
+    <Content Include="Images\演示文稿1_01.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -366,6 +385,12 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Detail.cshtml" />
+    <None Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -390,6 +415,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104130930055_updateColumnProperty.resx">
       <DependentUpon>202104130930055_updateColumnProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104131106022_AddColumnToMembershipType.resx">
+      <DependentUpon>202104131106022_AddColumnToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104131106445_PopulateMemberTypeName.resx">
+      <DependentUpon>202104131106445_PopulateMemberTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104140311503_AddColumnToCustomer_DOB.resx">
+      <DependentUpon>202104140311503_AddColumnToCustomer_DOB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

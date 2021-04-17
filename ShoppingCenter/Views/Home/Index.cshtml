@@ -1,18 +1,19 @@
-﻿@model ShoppingCenter.Models.HomePageViewModel
+﻿@*@model ShoppingCenter.Models.HomePageViewModel
 
 
 <table>
     <tr>
-        <th>Name</th>
-     
+        <th>Customer</th>
+        <th>Membership Type</th>
     </tr>
-
-
     @foreach (var customer in Model.Customers)
     {
         <tr>
-            <td>@Html.ActionLink(customer.Name,"Detail","Home",new { id = customer.Id },null)</td>           
+            <td>@Html.ActionLink(customer.Name, "Detail", "Home", new { id = customer.Id }, null)</td>
+            <td>@customer.MembershipType.Name</td>
+
         </tr>
 
     }
-</table>
+</table>*@
+<img src="~/Images/演示文稿1_01.png"  width="100%" height="100%"/>

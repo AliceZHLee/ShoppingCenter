@@ -1,15 +1,17 @@
 ﻿@model ShoppingCenter.Models.Customer
 
 <h2>@Model.Name</h2>
-<table>
-    <tr>
-        <th>Is Subscriber</th>
-        <th>MemeberShip Type</th>
-        <th>Discount Rate</th>
-    </tr>
-    <tr>
-        <td>@Model.IsSubscribedToNewsLetter</td>
-        <td>@Model.MembershipTypeId</td>
-        <td>@Model.MembershipType.DiscountRate%</td>
-    </tr>
-</table>
+<ul>
+
+
+    @if (Model.DOB.GetValueOrDefault()!= DateTime.MinValue)
+    {
+        <li>Birthday Date: @Model.DOB.GetValueOrDefault().ToShortDateString()</li>
+    }
+
+    <li>Is Subscriber:@Model.IsSubscribedToNewsLetter</li>
+    <li>MemeberShip Type: @Model.MembershipType.Name</li>
+    <li>Discount Rate： @Model.MembershipType.DiscountRate%</li>
+
+
+</ul>
