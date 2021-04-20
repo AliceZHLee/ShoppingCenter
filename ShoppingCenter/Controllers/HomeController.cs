@@ -19,6 +19,8 @@ namespace ShoppingCenter.Controllers
         {
             _context.Dispose();
         }
+
+
         public ActionResult Index()
         {
             return View();
@@ -29,31 +31,41 @@ namespace ShoppingCenter.Controllers
             return View();
         }
 
-        public ActionResult FAQ()
+        public ActionResult FAQ()// 这里可能不需要controller就直接去View就行
         {
             return View();
         }
         public ActionResult Shop()
         {
-            return View();
+            var viewModel = new ShopItemViewModel()
+            {
+                Products = _context.Products.Include(c => c.Pictures).ToList()
+            };       
+            
+            return View(viewModel);
         }
         public ActionResult Contact()
         {
             return View();
         }
 
-
-
-        public ActionResult Detail(int Id)
+        public ActionResult ShoppingCart()
         {
-            var customer = _context.Customers.Include(c=>c.MembershipType).SingleOrDefault(c => c.Id == Id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customer);
+            return View();
+        }
+        public ActionResult LogIn()
+        {
+            return View();
+        }
+        public ActionResult LogOut()
+        {
+            return View();
         }
 
+
+
+
+     
         
     }
 }

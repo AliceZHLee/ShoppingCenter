@@ -170,53 +170,38 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104111029182_InitialModel.cs" />
-    <Compile Include="Migrations\202104111029182_InitialModel.Designer.cs">
-      <DependentUpon>202104111029182_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202104200600443_InitialModel.cs" />
+    <Compile Include="Migrations\202104200600443_InitialModel.Designer.cs">
+      <DependentUpon>202104200600443_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104130907501_createMembershipType.cs" />
-    <Compile Include="Migrations\202104130907501_createMembershipType.Designer.cs">
-      <DependentUpon>202104130907501_createMembershipType.cs</DependentUpon>
+    <Compile Include="Migrations\202104200652489_AddPictureLinkComlumn.cs" />
+    <Compile Include="Migrations\202104200652489_AddPictureLinkComlumn.Designer.cs">
+      <DependentUpon>202104200652489_AddPictureLinkComlumn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104130918225_UpdateCustomerClassForNavigateProperity.cs" />
-    <Compile Include="Migrations\202104130918225_UpdateCustomerClassForNavigateProperity.Designer.cs">
-      <DependentUpon>202104130918225_UpdateCustomerClassForNavigateProperity.cs</DependentUpon>
+    <Compile Include="Migrations\202104200703274_addPictureToProductClass.cs" />
+    <Compile Include="Migrations\202104200703274_addPictureToProductClass.Designer.cs">
+      <DependentUpon>202104200703274_addPictureToProductClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104130922420_PopulateMembershipType.cs" />
-    <Compile Include="Migrations\202104130922420_PopulateMembershipType.Designer.cs">
-      <DependentUpon>202104130922420_PopulateMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104130930055_updateColumnProperty.cs" />
-    <Compile Include="Migrations\202104130930055_updateColumnProperty.Designer.cs">
-      <DependentUpon>202104130930055_updateColumnProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104131106022_AddColumnToMembershipType.cs" />
-    <Compile Include="Migrations\202104131106022_AddColumnToMembershipType.Designer.cs">
-      <DependentUpon>202104131106022_AddColumnToMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104131106445_PopulateMemberTypeName.cs" />
-    <Compile Include="Migrations\202104131106445_PopulateMemberTypeName.Designer.cs">
-      <DependentUpon>202104131106445_PopulateMemberTypeName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104140311503_AddColumnToCustomer_DOB.cs" />
-    <Compile Include="Migrations\202104140311503_AddColumnToCustomer_DOB.Designer.cs">
-      <DependentUpon>202104140311503_AddColumnToCustomer_DOB.cs</DependentUpon>
+    <Compile Include="Migrations\202104200807411_UpdatePriceType.cs" />
+    <Compile Include="Migrations\202104200807411_UpdatePriceType.Designer.cs">
+      <DependentUpon>202104200807411_UpdatePriceType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CreateCustomerViewModel.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\EditCustomerViewModel.cs" />
-    <Compile Include="Models\HomePageViewModel.cs" />
+    <Compile Include="Models\DeliveryAddress.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\ProductPicture.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ShopItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -238,6 +223,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Home Page Image.png" />
     <Content Include="Images\Home Page Image2.png" />
+    <Content Include="Images\item1.PNG" />
+    <Content Include="Images\item2.PNG" />
+    <Content Include="Images\item3.PNG" />
+    <Content Include="Images\item4.PNG" />
+    <Content Include="Images\item5.PNG" />
+    <Content Include="Images\item6.PNG" />
+    <Content Include="Images\item7.PNG" />
+    <Content Include="Images\item8.PNG" />
+    <Content Include="Images\item9.PNG" />
     <Content Include="Images\Pure Juice logo2.png" />
     <Content Include="Images\演示文稿1_01.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -422,13 +416,13 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Detail.cshtml" />
-    <None Include="Views\Customers\CustomerForm.cshtml" />
-    <Content Include="Views\Customers\Delete.cshtml" />
-    <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\ShoppingCart.cshtml" />
+    <Content Include="Views\Home\LogIn.cshtml" />
+    <Content Include="Views\Home\LogOut.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -439,36 +433,24 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104111029182_InitialModel.resx">
-      <DependentUpon>202104111029182_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104130907501_createMembershipType.resx">
-      <DependentUpon>202104130907501_createMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104130918225_UpdateCustomerClassForNavigateProperity.resx">
-      <DependentUpon>202104130918225_UpdateCustomerClassForNavigateProperity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104130922420_PopulateMembershipType.resx">
-      <DependentUpon>202104130922420_PopulateMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104130930055_updateColumnProperty.resx">
-      <DependentUpon>202104130930055_updateColumnProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104131106022_AddColumnToMembershipType.resx">
-      <DependentUpon>202104131106022_AddColumnToMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104131106445_PopulateMemberTypeName.resx">
-      <DependentUpon>202104131106445_PopulateMemberTypeName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104140311503_AddColumnToCustomer_DOB.resx">
-      <DependentUpon>202104140311503_AddColumnToCustomer_DOB.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104200600443_InitialModel.resx">
+      <DependentUpon>202104200600443_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200652489_AddPictureLinkComlumn.resx">
+      <DependentUpon>202104200652489_AddPictureLinkComlumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200703274_addPictureToProductClass.resx">
+      <DependentUpon>202104200703274_addPictureToProductClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200807411_UpdatePriceType.resx">
+      <DependentUpon>202104200807411_UpdatePriceType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

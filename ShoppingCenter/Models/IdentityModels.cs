@@ -21,7 +21,17 @@ namespace ShoppingCenter.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<MembershipType> MembershipTypes { get; set; }
+        public DbSet<Cart> Cart { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<ProductPicture> ProductPictures { get; set; }
+        public DbSet<DeliveryAddress>  DeliveryAddresses{ get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Cart>()
+        //        .HasKey(c => new { c.CustomerId, c.ProductId });
+        //}
         public ApplicationDbContext()
             : base("IdentityDbEntitiesString", throwIfV1Schema: false)
         {

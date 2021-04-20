@@ -1,0 +1,166 @@
+﻿@model ShoppingCenter.Models.ShopItemViewModel
+
+@{
+    ViewBag.Title = "Shop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var num = 1;
+}
+<style>
+
+
+    /*.JuiceItem {
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+
+    .ProductImg {
+        width: 100%;
+        height: auto;
+    }
+
+    .JuiceItem input {
+        -webkit-appearance: none;
+        border: none;
+        text-align: center;
+        width: 32px;
+        font-size: 16px;
+        color: #43484D;
+        font-weight: 300;
+    }*/
+
+    button[class*=btn] {
+        width: 30px;
+        height: 30px;
+        background-color: #E1E8EE;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+    }
+
+
+
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .Product {
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        margin: 1rem;
+        width: 20%;
+    }
+
+        .Product img {
+            width: 100%;
+        }
+
+    .quantity {
+        color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem 1rem;
+        letter-spacing: 0.5px;
+        margin-bottom:4px;
+    }
+    .quantity input{
+        width:50%;
+    }
+
+        .quantity h3 {
+            margin: 0;
+        }
+
+        /*.quantity span {
+            background-color: #22254b;
+            border-radius: 3px;
+            font-weight: bold;
+            padding: 0.25rem 0.5rem;
+        }*/
+
+    .ProductPicture .overview {
+        background-color: #fff;
+        padding: 2rem;
+        position:absolute;
+        max-height: 100%;
+        overflow: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: translateY(101%);
+        transition: transform 0.3s ease-in;
+    }
+
+        .overview h3 {
+            font-size: small;
+            margin-top: 0;
+        }
+
+    .ProductPicture:hover .overview {
+        transform: translateY(30%);
+    }
+
+    .AddToCart {
+        width:80%;
+        background-color: greenyellow;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom:4px;
+    }
+</style>
+
+
+<div class="main">
+
+
+    @foreach (var product in Model.Products)
+    {
+        <div class="Product">
+            @*<img class="ProductImg" src="@product.Pictures.Where(c=>c.IsParentImage==1)" />*@
+            
+            <div class="ProductPicture">
+                <img src="@product.Pictures.FirstOrDefault().PictureLink" />
+                @*<div class="overview">
+                    <h3>Overview:@product.ProductDescription</h3>
+                </div>*@
+            </div>
+            <div class="Product-info">
+                <p>@product.ProductName</p>
+                <p>$ @product.Price</p>
+            </div>
+
+
+            <div class="quantity">
+                <button id="@product.ProductName+@num" class="plus-btn" type="button">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+            </div>
+
+
+            <input type="submit" class="AddToCart" value="Add To Cart" />
+
+        </div>
+
+
+        num++;
+    }
+
+</div>
+<script>
+
+</script>
+
+
+
+

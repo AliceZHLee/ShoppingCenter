@@ -8,17 +8,22 @@ namespace ShoppingCenter.Models
 {
     public class Customer
     {
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
+
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        
-        [Display(Name="Date of Birth")]
+
+        [Display(Name = "Date of Birth")]
         public DateTime? DOB { get; set; }
-        
-        public bool IsSubscribedToNewsLetter { get; set; }
-        public MembershipType MembershipType { get; set; }//navigation properity to navigate one object from customer to membership type
-        [Display(Name="Membership Type")]
-        public int MembershipTypeId { get; set; }
+
+        public string Password { get; set; }
+
+        [Phone]
+        public string Phone { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
     }
 }

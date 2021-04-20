@@ -25,5 +25,31 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>
+        // Get the container element
+        var shopPageNav = document.getElementById("navbarSupportedContent");
+
+        // Get all buttons with class="btn" inside the container
+        var items = shopPageNav.getElementsByClassName("nav-item");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < items.length; i++) {
+            items[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("nav-item active");
+
+                // If there's no active class
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+
+                // Add the active class to the current/clicked button
+                this.className += " active";
+            });
+        }
+    </script>
+
 </body>
+
+
 </html>
