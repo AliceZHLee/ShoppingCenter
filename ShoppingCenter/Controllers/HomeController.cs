@@ -40,7 +40,8 @@ namespace ShoppingCenter.Controllers
             var viewModel = new ShopItemViewModel()
             {
                 Products = _context.Products.Include(c => c.Pictures).ToList()
-            };       
+            };
+            var picture = viewModel.Products.First().Pictures.Where(c => c.IsParentImage == true).FirstOrDefault().PictureLink;
             
             return View(viewModel);
         }

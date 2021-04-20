@@ -57,7 +57,17 @@
 
         .Product img {
             width: 100%;
+            height: 100%;
         }
+
+    .ProductPicture {
+        width: 100%;
+        height: 200px;
+    }
+
+    .Product-info {
+        position: relative;
+    }
 
     .quantity {
         color: #eee;
@@ -66,27 +76,29 @@
         justify-content: space-between;
         padding: 0.5rem 1rem 1rem;
         letter-spacing: 0.5px;
-        margin-bottom:4px;
+        margin-bottom: 4px;
     }
-    .quantity input{
-        width:50%;
-    }
+
+        .quantity input {
+            width: 50%;
+        }
 
         .quantity h3 {
             margin: 0;
         }
 
-        /*.quantity span {
+    /*.quantity span {
             background-color: #22254b;
             border-radius: 3px;
             font-weight: bold;
             padding: 0.25rem 0.5rem;
         }*/
 
+
     .ProductPicture .overview {
         background-color: #fff;
         padding: 2rem;
-        position:absolute;
+        position: absolute;
         max-height: 100%;
         overflow: auto;
         left: 0;
@@ -96,23 +108,23 @@
         transition: transform 0.3s ease-in;
     }
 
-        .overview h3 {
-            font-size: small;
-            margin-top: 0;
-        }
+    .overview h3 {
+        font-size: small;
+        margin-top: 0;
+    }
 
     .ProductPicture:hover .overview {
         transform: translateY(30%);
     }
 
     .AddToCart {
-        width:80%;
+        width: 80%;
         background-color: greenyellow;
         border: none;
         cursor: pointer;
         border-radius: 5px;
         font-size: 16px;
-        margin-bottom:4px;
+        margin-bottom: 4px;
     }
 </style>
 
@@ -123,13 +135,11 @@
     @foreach (var product in Model.Products)
     {
         <div class="Product">
-            @*<img class="ProductImg" src="@product.Pictures.Where(c=>c.IsParentImage==1)" />*@
-            
             <div class="ProductPicture">
-                <img src="@product.Pictures.FirstOrDefault().PictureLink" />
+                <img class="ProductImg" src="@product.Pictures.Where(c => c.IsParentImage == true).FirstOrDefault().PictureLink" />
                 @*<div class="overview">
-                    <h3>Overview:@product.ProductDescription</h3>
-                </div>*@
+                        <h3>Overview:@product.ProductDescription</h3>
+                    </div>*@
             </div>
             <div class="Product-info">
                 <p>@product.ProductName</p>
