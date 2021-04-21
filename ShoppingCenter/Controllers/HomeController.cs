@@ -10,6 +10,7 @@ namespace ShoppingCenter.Controllers
 {
     public class HomeController : Controller
     {
+        
         private ApplicationDbContext _context;
         public HomeController()
         {
@@ -35,6 +36,7 @@ namespace ShoppingCenter.Controllers
         {
             return View();
         }
+        
         public ActionResult Shop()
         {
             var viewModel = new ShopItemViewModel()
@@ -45,6 +47,7 @@ namespace ShoppingCenter.Controllers
             
             return View(viewModel);
         }
+
         public ActionResult Contact()
         {
             return View();
@@ -56,11 +59,64 @@ namespace ShoppingCenter.Controllers
         }
         public ActionResult LogIn()
         {
+            if (Session["User"] != null)
+            {
+                RedirectToAction("Index");
+            }
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogIn(Customer customer)
+        {
+            //var data=_context.Customers.Any(c=>c.Email==customer.Email && c=>c.Password==customer.Password)
+            var email = _context.Customers.Where(c => c.Email == customer.Email).ToList();
+            if (email.Count() == 0)
+            {
+               // 说明用户还没有注册
+               //return
+            }
+            var existingUser = email.Where(c => c.Password == customer.Password).ToList();
+            if (existingUser.Count() == 0)
+            {
+                //说明用户密码输错了，但是我返回的时候还是要说明密码或邮箱出现了错误
+                //return
+            }
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(Customer customer)
+        {
+            if (!_context.Customers.Any(c => c.Email == customer.Email))
+            {
+                _context.Customers.Add(customer);
+                _context.SaveChanges();
+               
+                return RedirectToAction("Index", "Home");
+            }
+          
+            return View("Register");
+           
+        }
+
+      
+      
         public ActionResult LogOut()
         {
             return View();
+        }
+
+        public string EncryptPassword(string password)
+        {
+            var hashcode = password.GetHashCode();
+            return hashcode.ToString();
         }
 
 

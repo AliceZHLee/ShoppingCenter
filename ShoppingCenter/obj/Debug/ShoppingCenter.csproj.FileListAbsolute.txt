@@ -107,3 +107,4 @@ C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\Shoppin
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.addPictureToProductClass.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.UpdatePriceType.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csprojAssemblyReference.cache
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.AddConfirmPasswordField.resources

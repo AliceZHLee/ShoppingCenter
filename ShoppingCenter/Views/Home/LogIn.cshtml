@@ -1,8 +1,62 @@
-﻿
+﻿@model ShoppingCenter.Models.Customer
+
 @{
     ViewBag.Title = "LogIn";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>LogIn</h2>
 
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Pure Juice Shop</h4> 
+        <a href="@Url.Action("Register","Home")">Register as a new user</a>
+       
+        <hr />
+        @Html.ValidationSummary(true, "Please fix the following errors", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        @Html.HiddenFor(model=>model.CustomerId)
+
+        <div class="form-group col-6">
+
+            <input type="submit" value="Log In" class="btn btn-info" />
+
+            <a class="btn btn-danger" href="@Url.Action("Index","Home")">Cancel</a>
+
+        </div>
+    </div>
+}
+
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

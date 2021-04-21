@@ -191,6 +191,10 @@
     <Compile Include="Migrations\202104200807411_UpdatePriceType.Designer.cs">
       <DependentUpon>202104200807411_UpdatePriceType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104210808006_AddConfirmPasswordField.cs" />
+    <Compile Include="Migrations\202104210808006_AddConfirmPasswordField.Designer.cs">
+      <DependentUpon>202104210808006_AddConfirmPasswordField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -424,6 +428,7 @@
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\LogOut.cshtml" />
     <Content Include="Views\Home\Shop.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -451,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104200807411_UpdatePriceType.resx">
       <DependentUpon>202104200807411_UpdatePriceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210808006_AddConfirmPasswordField.resx">
+      <DependentUpon>202104210808006_AddConfirmPasswordField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
