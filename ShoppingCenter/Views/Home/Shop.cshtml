@@ -136,10 +136,15 @@
     {
         <div class="Product">
             <div class="ProductPicture">
+                @if(product.Pictures.Count()>0){
                 <img class="ProductImg" src="@product.Pictures.Where(c => c.IsParentImage == true).FirstOrDefault().PictureLink" />
+                }
+                else{
+                <img class="ProductImg" src="~/Images/no-image.png" />
+                }
                 @*<div class="overview">
-                        <h3>Overview:@product.ProductDescription</h3>
-                    </div>*@
+            <h3>Overview:@product.ProductDescription</h3>
+        </div>*@
             </div>
             <div class="Product-info">
                 <p>@product.ProductName</p>
