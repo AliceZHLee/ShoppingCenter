@@ -79,8 +79,12 @@
         margin-bottom: 4px;
     }
 
+    
+
         .quantity input {
             width: 50%;
+            text-align:center;
+
         }
 
         .quantity h3 {
@@ -136,15 +140,17 @@
     {
         <div class="Product">
             <div class="ProductPicture">
-                @if(product.Pictures.Count()>0){
-                <img class="ProductImg" src="@product.Pictures.Where(c => c.IsParentImage == true).FirstOrDefault().PictureLink" />
+                @if (product.Pictures.Count() > 0)
+                {
+                    <img class="ProductImg" src="@product.Pictures.Where(c => c.IsParentImage == true).FirstOrDefault().PictureLink" />
                 }
-                else{
-                <img class="ProductImg" src="~/Images/no-image.png" />
+                else
+                {
+                    <img class="ProductImg" src="~/Images/no-image.png" />
                 }
                 @*<div class="overview">
-            <h3>Overview:@product.ProductDescription</h3>
-        </div>*@
+                        <h3>Overview:@product.ProductDescription</h3>
+                    </div>*@
             </div>
             <div class="Product-info">
                 <p>@product.ProductName</p>
@@ -156,8 +162,8 @@
                 <button id="@product.ProductName+@num" class="plus-btn" type="button">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button">
+                <input type="text" id="quantity" value="1">
+                <button data-product-id="@product.ProductId" class="minus-btn" type ="button" disabled >
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </button>
             </div>
@@ -172,9 +178,77 @@
     }
 
 </div>
-<script>
 
-</script>
+@section scripts
+{
+    <script>
+       //setting default attributes to disabled of minus button
+
+        //document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+
+        //taking value to increment decrement input value
+        var valueCount;
+
+        //plus button 
+        document.querySelector(".plus-btn").addEventListener("click", function () {
+
+            //get input value
+            valueCount = document.getElementById("quantity").value;
+
+            //input value increment by 1
+            valueCount++;
+
+            //setting increment input value
+            document.getElementById("quantity").value = valueCount;
+
+            if (valueCount > 1) {
+                document.querySelector(".minus-btn").removeAttribute("disabled");
+                document.querySelector(".minus-btn").classList.remove("disabled");
+            }
+        });
+
+        ////minus button 
+        //document.querySelector(".minus-btn").addEventListener("click", function () {
+
+        //    //get input value
+        //    valueCount = document.getElementById("quantity").value;
+
+        //    //input value increment by 1
+        //    valueCount--;
+
+        //    //setting increment input value
+        //    document.getElementById("quantity").value = valueCount;
+
+        //    if (valueCount == 1) {
+        //        document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+        //    }
+        //});
+
+        //minus button
+        $(".quantity .minus-btn").on("click", function () {
+            var btn = $(this);
+
+            var quantityBox = btn.parent.getElementById("#quantity");
+            //get input value
+            valueCount = quantityBox.value;
+
+            //input value increment by 1
+            valueCount--;
+
+            //setting increment input value
+            quantityBox.value = valueCount;
+
+            if (valueCount == 1) {
+                document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+            }
+
+        });
+       
+        
+
+
+    </script>
+}
 
 
 
