@@ -1,4 +1,4 @@
 # FreelyShopping
 
 It is an online juice shop developed using ASP.NET MVC.<br/>
-The DB script is inside Document folder.
+Entity Framework's code-first method is used for building and maintaining database.
