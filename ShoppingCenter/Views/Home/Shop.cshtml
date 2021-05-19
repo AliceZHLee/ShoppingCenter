@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Shop";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var num = 1;
+    //var num = 1;
 }
 <style>
 
@@ -133,7 +133,7 @@
 </style>
 
 
-<div class="main">
+<div id="productList" class="main">
 
 
     @foreach (var product in Model.Products)
@@ -159,11 +159,11 @@
 
 
             <div class="quantity">
-                <button id="@product.ProductName+@num" class="plus-btn" type="button">
+                <button data-product-id="plus @product.ProductId" class="plus-btn" type="button">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </button>
-                <input type="text" id="quantity" value="1">
-                <button data-product-id="@product.ProductId" class="minus-btn" type ="button" disabled >
+                <input type="text" id="quantity @product.ProductId" value="1">
+                <button data-product-id="minus @product.ProductId" class="minus-btn" type ="button" disabled="disabled" >
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </button>
             </div>
@@ -174,7 +174,7 @@
         </div>
 
 
-        num++;
+        //num++;
     }
 
 </div>
@@ -182,30 +182,68 @@
 @section scripts
 {
     <script>
-       //setting default attributes to disabled of minus button
+        $(document).ready(function () {
+            $("#productList .plus-btn").on("click", function () {
+                var plusBtn = $(this);
+                //var productId = button.attr("data-product-id");
 
-        //document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+                //alert(productId);
+                var productValue = plusBtn.parent("div").children("input")[0].value;
+                //alert(productValue);
 
-        //taking value to increment decrement input value
-        var valueCount;
+                productValue++;
+                plusBtn.parent("div").children("input")[0].value = productValue;
+                //alert(productValue);
 
-        //plus button 
-        document.querySelector(".plus-btn").addEventListener("click", function () {
+                if (productValue > 1) {
+                    var minusBtn = plusBtn.parent("div").children(".minus-btn")[0];
+                    minusBtn.disabled = false;                    
+                }  
+            });
 
-            //get input value
-            valueCount = document.getElementById("quantity").value;
+            $("#productList .minus-btn").on("click", function () {
+                var minusBtn = $(this);
+                //var productId = button.attr("data-product-id");
 
-            //input value increment by 1
-            valueCount++;
+                //alert(productId);
+                var productValue = minusBtn.parent("div").children("input")[0].value;             
 
-            //setting increment input value
-            document.getElementById("quantity").value = valueCount;
+                productValue--;
+                minusBtn.parent("div").children("input")[0].value = productValue;               
 
-            if (valueCount > 1) {
-                document.querySelector(".minus-btn").removeAttribute("disabled");
-                document.querySelector(".minus-btn").classList.remove("disabled");
-            }
+                if (productValue == 1) {
+                    //minusBtn.disabled=true;  //this doesn't work, it might because $(this) cannot tell the element type as a button
+                    minusBtn.parent("div").children(".minus-btn")[0].disabled = true;
+                                    
+                }  
+            });
         });
+
+
+       ////setting default attributes to disabled of minus button
+
+       // //document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+
+       // //taking value to increment decrement input value
+       // var valueCount;
+
+       // //plus button 
+       // document.querySelector(".plus-btn").addEventListener("click", function () {
+
+       //     //get input value
+       //     valueCount = document.getElementById("quantity").value;
+
+       //     //input value increment by 1
+       //     valueCount++;
+
+       //     //setting increment input value
+       //     document.getElementById("quantity").value = valueCount;
+
+       //     if (valueCount > 1) {
+       //         document.querySelector(".minus-btn").removeAttribute("disabled");
+       //         document.querySelector(".minus-btn").classList.remove("disabled");
+       //     }
+       // });
 
         ////minus button 
         //document.querySelector(".minus-btn").addEventListener("click", function () {
@@ -224,25 +262,7 @@
         //    }
         //});
 
-        //minus button
-        $(".quantity .minus-btn").on("click", function () {
-            var btn = $(this);
-
-            var quantityBox = btn.parent.getElementById("#quantity");
-            //get input value
-            valueCount = quantityBox.value;
-
-            //input value increment by 1
-            valueCount--;
-
-            //setting increment input value
-            quantityBox.value = valueCount;
-
-            if (valueCount == 1) {
-                document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
-            }
-
-        });
+        
        
         
 
