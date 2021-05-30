@@ -36,7 +36,12 @@ namespace ShoppingCenter.Controllers
         {
             return View();
         }
-        
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
         public ActionResult Shop()
         {
             var viewModel = new ShopItemViewModel()
@@ -46,16 +51,15 @@ namespace ShoppingCenter.Controllers
            
             
             return View(viewModel);
-        }
-
-        public ActionResult Contact()
-        {
-            return View();
-        }
+        }               
 
         public ActionResult ShoppingCart()
         {
-            return View();
+            var viewModel = new ShoppingCartViewModel()
+            {
+                Carts = _context.Cart.Include(c=>c.Product).ToList()
+            };
+            return View(viewModel);
         }
         public ActionResult LogIn()
         {

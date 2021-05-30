@@ -15,6 +15,9 @@ namespace ShoppingCenter.App_Start
             Mapper.CreateMap<Product, ProductDto>();
             Mapper.CreateMap<ProductDto, Product>().ForMember(m => m.ProductId, opt => opt.Ignore());
 
+            Mapper.CreateMap<Cart, CartDto>();
+            Mapper.CreateMap<CartDto, Cart>();
+
 
         }
     }

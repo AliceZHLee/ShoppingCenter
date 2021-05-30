@@ -106,7 +106,6 @@ C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\Shoppin
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.AddPictureLinkComlumn.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.addPictureToProductClass.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.UpdatePriceType.resources
-C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csprojAssemblyReference.cache
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.Migrations.AddConfirmPasswordField.resources
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\AutoMapper.dll
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\System.Net.Http.Formatting.dll
@@ -116,3 +115,4 @@ C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\AutoMapper.xm
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\System.Net.Http.Formatting.xml
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\System.Web.Http.xml
 C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\bin\System.Web.Http.WebHost.xml
+C:\Users\LI ZHENGYI\source\repos\ShoppingCenter\ShoppingCenter\obj\Debug\ShoppingCenter.csprojAssemblyReference.cache

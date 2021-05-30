@@ -1,8 +1,45 @@
-﻿
+﻿@model ShoppingCenter.Models.ShoppingCartViewModel
 @{
     ViewBag.Title = "ShoppingCart";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
-<h2>ShoppingCart</h2>
+<div class="cart-item">
+    <h3>My Cart</h3>
+    @foreach (var cartItem in Model.Carts)
+    {
+        <div class="item">
+            <div class="buttons">
+                <span class="delete-btn"></span>
+                <span class="like-btn"></span>
+            </div>
+
+            <div class="image">
+                <img src="@cartItem.Product.Pictures.FirstOrDefault()" alt="" />
+            </div>
+
+            <div class="description">
+                <span>Common Projects</span>
+                <span>Bball High</span>
+                <span>White</span>
+            </div>
+
+            <div class="quantity">
+                <button class="plus-btn" type="button" name="button">
+                    <img src="plus.svg" alt="" />
+                </button>
+                <input type="text" name="name" value="1">
+                <button class="minus-btn" type="button" name="button">
+                    <img src="minus.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="total-price">$549</div>
+        </div>
+    }
+</div>
+<div class="checkout-item">
+    <h3>Order Summary</h3>
+</div>
 
