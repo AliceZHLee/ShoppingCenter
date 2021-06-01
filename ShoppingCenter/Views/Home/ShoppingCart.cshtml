@@ -4,42 +4,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
-
-<div class="cart-item">
-    <h3>My Cart</h3>
-    @foreach (var cartItem in Model.Carts)
-    {
-        <div class="item">
-            <div class="buttons">
-                <span class="delete-btn"></span>
-                <span class="like-btn"></span>
-            </div>
-
-            <div class="image">
-                <img src="@cartItem.Product.Pictures.FirstOrDefault()" alt="" />
-            </div>
-
-            <div class="description">
-                <span>Common Projects</span>
-                <span>Bball High</span>
-                <span>White</span>
-            </div>
-
-            <div class="quantity">
-                <button class="plus-btn" type="button" name="button">
-                    <img src="plus.svg" alt="" />
-                </button>
-                <input type="text" name="name" value="1">
-                <button class="minus-btn" type="button" name="button">
-                    <img src="minus.svg" alt="" />
-                </button>
-            </div>
-
-            <div class="total-price">$549</div>
-        </div>
+<style>
+    /*.item{
+        width:100%;
+        height:100px;
     }
-</div>
-<div class="checkout-item">
-    <h3>Order Summary</h3>
+
+    .image{
+        width:auto;
+        height:90%;
+    }*/
+</style>
+
+<div class="container-fluid">
+    <div class="row" id="cart-item">
+        <h3>My Cart</h3>
+        <hr />
+        @foreach (var cartItem in Model.Carts)
+        {
+            <div class="row" id="item">
+                <div class="col-2" id="buttons">
+                    <span class="delete-btn"></span>
+                    <span class="like-btn"></span>
+                </div>
+
+                <div class="col-3" id="image">
+                    @if (cartItem.Product.Pictures.Count() == 0)
+                    {
+                        <img class="ProductImg" src="~/Images/no-image.png" style="width:100px;height:100px;" />
+                    }
+                    else
+                    {
+                        <img src="@cartItem.Product.Pictures.Where(c => c.IsParentImage == true).FirstOrDefault().PictureLink" style="width:100px;height:100px;" />
+                    }
+
+                </div>
+
+                <div class="col-3" id="ProductDesc">
+                    <span>@cartItem.Product.ProductName</span>
+                </div>
+
+                <div class="col-3" id="quantity">
+                    <button class="plus-btn" type="button" name="button">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <input type="text" name="name" value="@cartItem.Qty">
+                    <button class="minus-btn" type="button" name="button">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div class="col-1" id="total-price"></div>
+            </div>
+        }
+    </div>
+    <div class="row-cols-4" id="checkout-item">
+        <h3>Order Summary</h3>
+    </div>
 </div>
 

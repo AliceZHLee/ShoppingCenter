@@ -5,21 +5,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+   
     <div class="form-horizontal">
-        <h4>Pure Juice Shop</h4> 
+        <h4>Pure Juice Shop</h4>
         <a href="@Url.Action("Register","Home")">Register as a new user</a>
-       
+
         <hr />
         @Html.ValidationSummary(true, "Please fix the following errors", new { @class = "text-danger" })
 
 
         <div class="form-group">
+            @*<div class="input-group-prepend">*@
+            @*<div class="col-md-10">*@
+            @*<span class="fa fa-user-circle-o" aria-hidden="true"></span>*@
             @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*</div>*@
+
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
@@ -42,7 +46,7 @@
                 </div>
             </div>*@
 
-        @Html.HiddenFor(model=>model.CustomerId)
+        @Html.HiddenFor(model => model.CustomerId)
 
         <div class="form-group col-6">
 

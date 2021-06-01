@@ -57,10 +57,11 @@ namespace ShoppingCenter.Controllers
         {
             var viewModel = new ShoppingCartViewModel()
             {
-                Carts = _context.Cart.Include(c=>c.Product).ToList()
+                Carts = _context.Cart.Include(c=>c.Customer).Include(c => c.Product).Include(c=>c.Product.Pictures).ToList()
             };
             return View(viewModel);
         }
+
         public ActionResult LogIn()
         {
             if (Session["User"] != null)
@@ -69,6 +70,7 @@ namespace ShoppingCenter.Controllers
             }
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogIn(Customer customer)
@@ -77,16 +79,17 @@ namespace ShoppingCenter.Controllers
             var email = _context.Customers.Where(c => c.Email == customer.Email).ToList();
             if (email.Count() == 0)
             {
-               // 说明用户还没有注册
-               //return
+               // 说明用户还没有注册 
+               //return "this account is not registered"
             }
             var existingUser = email.Where(c => c.Password == customer.Password).ToList();
             if (existingUser.Count() == 0)
             {
-                //说明用户密码输错了，但是我返回的时候还是要说明密码或邮箱出现了错误
-                //return
+                //说明用户密码输错了，但是我返回的时候还是要说明 密码或邮箱出现了错误
+                //return "email or password wrong"
             }
-            return View();
+
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult Register()

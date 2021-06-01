@@ -258,6 +258,7 @@
     <Content Include="Images\no-image.png" />
     <Content Include="Images\OurStoryImage.png" />
     <Content Include="Images\Pure Juice logo2.png" />
+    <Content Include="Images\wave.png" />
     <Content Include="Images\演示文稿1_01.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -508,6 +509,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties content_4bootstrap_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
